@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "function.cpp"
 #include<iostream>
 #include <string>
@@ -12,9 +13,8 @@ int main(){
       return 0; 
     }
     cout<<"Login Successful!"<<endl;
-
-
-
+    Sleep(1000);
+    system("CLS");
 
 
 
