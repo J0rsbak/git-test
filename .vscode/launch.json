@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/estau/repos/git-test",
-      "program": "c:/Users/estau/repos/git-test/build/Debug/outDebug",
+      "cwd": "c:/Users/estau/repos/git-test/chess",
+      "program": "c:/Users/estau/repos/git-test/chess/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -36,6 +36,30 @@ class board{
 
 
 };
+class pieces{
+    public:
+        string square;
+        
+};
+int main(){
+    int a = 0;
+    while(true){
+        cout<<"Press 1 to play from a specific position."<<endl<<"Press 2 to play from the default position"<<endl<<"Press 3 to exit the program"<<endl;
+        if (a == 1){
+            cout<<"Input state of the board in FEN.";
+        }else if(a == 2){
+            
+        }else if(a == 3){
 
+        }else{
+            cout<<"Invalid value."<<endl;
+        }
+
+    }
+    
+    
+
+
+}
 
 
