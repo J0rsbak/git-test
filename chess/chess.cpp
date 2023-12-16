@@ -1,61 +1,46 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 using namespace std;
 
 
 class board{
     public:
-        string position_board = "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr";
+        string position_board = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+
         string board_current_status[8][8]={
-            {"R","N","B","Q","K","B","N","R"},
-            {"P","P","P","P","P","P","P","P"},
-            {"-","-","-","-","-","-","-","-"},
-            {"-","-","-","-","-","-","-","-"},
-            {"-","-","-","-","-","-","-","-"},
-            {"-","-","-","-","-","-","-","-"},
+            {"r","n","b","q","k","b","n","r"},
             {"p","p","p","p","p","p","p","p"},
-            {"r","n","b","q","k","b","n","r"}
+            {"-","-","-","-","-","-","-","-"},
+            {"-","-","-","-","-","-","-","-"},
+            {"-","-","-","-","-","-","-","-"},
+            {"-","-","-","-","-","-","-","-"},
+            {"P","P","P","P","P","P","P","P"},
+            {"R","N","B","Q","K","B","N","R"}
         };
     void show_board(){
-        for(int i = 0; i<8;i++){
-            for(int j = 0; j<8;j++){
-                cout<<board_current_status[i][j];
-                if(j == 7){
-                    cout<<endl;
-                }
+        for(int i =0; i<8; i++){
+            for(int j = 0; j<8; j++){
+                cout << board_current_status[i][j];
             }
-        }
-    };
-    void set_position_in_board(){
-        for(int i = 0; i<8; i++){
-            for(int j = 0; j<8;j++){
-                board_current_status[i][j]=position_board[i*8+j];
-            }
+            cout<<"\n";
         }
     }
-
-
-};
-class pieces{
-    public:
-        string square;
-        
-};
-int main(){
-    int a = 0;
-    while(true){
-        cout<<"Press 1 to play from a specific position."<<endl<<"Press 2 to play from the default position"<<endl<<"Press 3 to exit the program"<<endl;
-        if (a == 1){
-            cout<<"Input state of the board in FEN.";
-        }else if(a == 2){
+    void set_position(){
+        for(int i = 0; i<position_board.size();i++){
+            if(isdigit(position_board[i])){
+                int num=position_board[i] - '0';
+                position_board.erase(i,1);
+                position_board.insert(i,num,'-');
+                i--;
+            }
             
-        }else if(a == 3){
-
-        }else{
-            cout<<"Invalid value."<<endl;
         }
-
+    
     }
+};
+
+int main(){
     
     
 
