@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <SFML/Graphics.hpp>
 using namespace std;
 
 
