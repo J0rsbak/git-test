@@ -1,8 +1,12 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include <SFML/Graphics.hpp>
+
 using namespace std;
+
+
+
+
 
 
 class board{
@@ -56,6 +60,8 @@ class board{
 };
 
 int main(){
+
+    
     board a;
     a.position_board = "r1bk3r/p2pBpNp/n4n2/1p1NP2P/6P1/3P4/P1P1K3/q5b1";
     a.set_position();

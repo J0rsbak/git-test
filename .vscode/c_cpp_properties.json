@@ -4,7 +4,7 @@
             "name": "windows-gcc-x64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\Users\\estau\\OneDrive\\Documentos\\libraries\\SFML-2.6.1\\include"
+                "C:\\libraries\\wxWidgets-3.2.4"
             ],
             "defines": [
                 "_DEBUG",
