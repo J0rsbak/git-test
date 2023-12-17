@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Board{
+class board{
     public:
         string position_board = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
         string board_current_status[8][8]={
@@ -55,53 +55,61 @@ class Board{
         set_board();
     }
 };
-Board normal;
-class Piece{
+board normal;
+
+class piece{
     public:
         bool color;
         int* position;
         bool moved;
         int** posible_moves;
-        Piece(bool a,int* b,bool c,int** d):color(a),position(b),moved(c),posible_moves(d){}
-
-    class Pawn:public Piece{
-        Pawn(bool a,int* b[2],bool c,int* d[32][2]):Piece(a, b, c, d){}
-    };
-    class Rook{
-
-    };
-    class Bishop{
-
-    };
-    class Knight{
-
-    };
-    class Queen{
-
-    };
-    class King{
-
-    };
+        string type;
 };
-
-int main(){
+class pawn: public piece{
     
-    while (true) {
-        int mode;
-        cout<<"Enter 1 to fix a position and play from there. \nEnter 2 to play from the default position. \nEnter anything else to exit. \n";
-        cin>>mode;
+};
+class rook: public piece{
+    
+};
+class king: public piece{
+    
+};
+class queen: public piece{
+    
+};
+class knight: public piece{
+    
+};
+class bishop: public piece{
+    
+};
+bool login(){
+    int mode;
+    cout<<"Enter 1 to fix a position and play from there. \nEnter 2 to play from the default position. \nEnter anything else to exit. \n";
+    cin>>mode;
+    Sleep(1000);
+    system("CLS");
+    if(mode == 1){
+        cout<<"Enter the position in FEN: ";
+        cin>>normal.position_board;
         Sleep(1000);
         system("CLS");
-        if(mode == 1){
-            cout<<"Enter the position in FEN. ";
-            cin>>normal.position_board;
-            Sleep(1000);
-            system("CLS");
-        }if(mode == 2){
+        return true;
+    }if(mode == 2){
+        return true;
+    }else{
+        return false;
+    }
+}
 
-        }else{
+int main(){
+    if(!login()){
             return 0;
-        }
+    }
+    while (true) {
+        
+        
+        
         
     }
 }
