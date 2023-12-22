@@ -60,57 +60,44 @@ board normal;
 class piece{
     public:
         bool color;
-        int* position;
-        bool moved;
-        int** posible_moves;
-        string type;
+        int position[2];
+        int moves[32][2];
+        int posible_moves[32][2];
+        
 };
 class pawn: public piece{
-    
+    public:
+        bool has_moved;
 };
 class rook: public piece{
-    
+    public:
+        bool has_moved;
 };
 class king: public piece{
-    
+    public:
+        bool has_moved;
 };
 class queen: public piece{
-    
+    public:
 };
 class knight: public piece{
-    
+    public:
 };
 class bishop: public piece{
-    
+    public:
 };
-bool login(){
-    int mode;
-    cout<<"Enter 1 to fix a position and play from there. \nEnter 2 to play from the default position. \nEnter anything else to exit. \n";
-    cin>>mode;
-    Sleep(1000);
-    system("CLS");
-    if(mode == 1){
-        cout<<"Enter the position in FEN: ";
-        cin>>normal.position_board;
-        Sleep(1000);
-        system("CLS");
-        return true;
-    }if(mode == 2){
-        return true;
-    }else{
-        return false;
-    }
-}
 
+void setup(){
+    pawn p1;
+    p1.color = false;
+    p1.position = {6,0};
+    p1.has_moved = false;
+}
 int main(){
-    if(!login()){
-            return 0;
-    }
-    while (true) {
-        
-        
-        
-        
-    }
+    setup();
+    
+    do{
+        normal.show_board();
+    }while(false);
 }
 
