@@ -1,10 +1,8 @@
 #include <iostream>
 #include <string>
-#include <cctype>
 #include <windows.h>
-
 using namespace std;
-
+string input_square;
 class board{
     public:
         string position_board = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
@@ -55,7 +53,6 @@ class board{
     }
 };
 board normal;
-
 class piece{
     public:
         bool color;
@@ -67,6 +64,8 @@ class piece{
 class pawn: public piece{
     public:
         bool has_moved;
+        bool last_moved;
+    
 };
 class rook: public piece{
     public:
@@ -85,85 +84,153 @@ class knight: public piece{
 class bishop: public piece{
     public:
 };
+void converter(){
+/*    char input_position[2];
+    string input_square;
+    cin>>input_square;
+    switch (input_square[0])
+    {
+    case 'a':
+        input_position[0]='0';
+    case 'b':
+        input_position[0]='1';
+    case 'c':
+        input_position[0]='2';
+    case 'd':
+        input_position[0]='3';
+    case 'e':
+        input_position[0]='4';
+    case 'f':
+        input_position[0]='5';
+    case 'g': 
+        input_position[0]='6';
+    case 'h': 
+        input_position[0]='7';
+    
+    }
+    switch (input_square[1])
+    {
+    case '1':
+        input_position[0]='7';
+    case '2':
+        input_position[0]='6';
+    case '3':
+        input_position[0]='5';
+    case '4':
+        input_position[0]='4';
+    case '5':
+        input_position[0]='3';
+    case '6':
+        input_position[0]='2';
+    case '7':
+        input_position[0]='1';
+    case '8':
+        input_position[0]='0';
+    
+    }
+    */
+}
+void move(){
+    cout<<"Enter the square where the piece you want to move is: ";
+    cin>>input_square;
+
+}
+
 void setuppawns(){
     pawn p1;
     p1.color=false;
     p1.has_moved=false;
+    p1.last_moved=false;
     p1.position[0]=1;
     p1.position[1]=0;
     pawn p2;
     p2.color=false;
     p2.has_moved=false;
+    p2.last_moved=false;
     p2.position[0]=1;
     p2.position[1]=1;
     pawn p3;
     p3.color=false;
     p3.has_moved=false;
+    p3.last_moved=false;
     p3.position[0]=1;
     p3.position[1]=2;
     pawn p4;
     p4.color=false;
     p4.has_moved=false;
+    p4.last_moved=false;
     p4.position[0]=1;
     p4.position[1]=3;
     pawn p5;
     p5.color=false;
     p5.has_moved=false;
+    p5.last_moved=false;
     p5.position[0]=1;
     p5.position[1]=4;
     pawn p6;
     p6.color=false;
     p6.has_moved=false;
+    p6.last_moved=false;
     p6.position[0]=1;
     p6.position[1]=5;
     pawn p7;
     p7.color=false;
     p7.has_moved=false;
+    p7.last_moved=false;
     p7.position[0]=1;
     p7.position[1]=6;
     pawn p8;
     p8.color=false;
     p8.has_moved=false;
+    p8.last_moved=false;
     p8.position[0]=1;
     p8.position[1]=7;
     pawn P1;
     P1.color=true;
     P1.has_moved=false;
+    P1.last_moved=false;
     P1.position[0]=6;
     P1.position[1]=0;
     pawn P2;
     P2.color=true;
     P2.has_moved=false;
+    P2.last_moved=false;
     P2.position[0]=6;
     P2.position[1]=1;
     pawn P3;
     P3.color=true;
     P3.has_moved=false;
+    P3.last_moved=false;
     P3.position[0]=6;
     P3.position[1]=2;
     pawn P4;
     P4.color=true;
     P4.has_moved=false;
+    P4.last_moved=false;
     P4.position[0]=6;
     P4.position[1]=3;
     pawn P5;
     P5.color=true;
     P5.has_moved=false;
+    P5.last_moved=false;
     P5.position[0]=6;
     P5.position[1]=4;
     pawn P6;
     P6.color=true;
     P6.has_moved=false;
+    P6.last_moved=false;
     P6.position[0]=6;
     P6.position[1]=5;
     pawn P7;
     P7.color=true;
     P7.has_moved=false;
+    P7.last_moved=false;
     P7.position[0]=6;
     P7.position[1]=6;
     pawn P8;
     P8.color=true;
     P8.has_moved=false;
+    P8.last_moved=false;
     P8.position[0]=6;
     P8.position[1]=7;
 }
@@ -226,16 +293,37 @@ void setupbishops(){
     B2.position[1]=2;
 }
 void setupmajesty(){
-
+    queen q;
+    q.color=false;
+    q.position[0]=0;
+    q.position[1]=3;
+    queen Q;
+    Q.color=true;
+    Q.position[0]=7;
+    Q.position[1]=3;
+    king k;
+    k.color=false;
+    k.has_moved=false;
+    k.position[0]=0;
+    k.position[1]=4;
+    king K;
+    K.color=true;
+    K.has_moved=false;
+    K.position[0]=7;
+    K.position[1]=4;
 }
 void setup(){
     setuppawns();
     setuprooks();
     setupknights();
     setupbishops();
+    setupmajesty();
 }
 int main(){
     setup();
+    while(true){
+
+    }
 }    
     
 
